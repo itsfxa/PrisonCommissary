@@ -64,6 +64,12 @@ public class Commissary implements CommandExecutor {
                     }
                 }
 
+                if(args[0].equalsIgnoreCase("reload")) {
+                    main.reloadConfig();
+                    p.sendMessage(col(main.getConfig().getString("Config-Reloaded")));
+                    return true;
+                }
+
                 if (args[0].equalsIgnoreCase("create")) {
                     p.sendMessage(col("&cPlease specify a commissary name, points, and time!"));
                     p.sendMessage(col("&cUsage: /commissary create test 10 120"));

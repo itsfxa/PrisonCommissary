@@ -3,6 +3,7 @@ Points-Prefix: '&7[&cPoints&7]'
 No-Permission: '&cYou do not have permission to use this command!'
 Must-Be-Player: '&cYou must be a player to run this command!'
 Not-A-Valid-Number: '&cThat is not a valid number!'
+Config-Reloaded: '&7The config was reloaded!'
 
 # Commissary sign config #
 First-Line: '&8[&cCommissary&8]'

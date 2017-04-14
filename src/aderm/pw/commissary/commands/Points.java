@@ -42,31 +42,55 @@ public class Points implements CommandExecutor {
         }
 
         if (args.length == 1) {
-            if (args[0].equalsIgnoreCase("help") && p.hasPermission("points.admin")) {
-                p.sendMessage(col("&cPoints help page:"));
-                p.sendMessage(col("&7/points"));
-                p.sendMessage(col("&7/points set <player> <points>"));
-                p.sendMessage(col("&7/points <give/add> <player> <points>"));
-                p.sendMessage(col("&7/points take <player> <points>"));
-                p.sendMessage(col("&7/points pay <player> <points>"));
-                p.sendMessage(col("&7/points reset <player>"));
-                return true;
+            if (args[0].equalsIgnoreCase("help")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                } else {
+                    p.sendMessage(col("&cPoints help page:"));
+                    p.sendMessage(col("&7/points"));
+                    p.sendMessage(col("&7/points set <player> <points>"));
+                    p.sendMessage(col("&7/points <give/add> <player> <points>"));
+                    p.sendMessage(col("&7/points take <player> <points>"));
+                    p.sendMessage(col("&7/points pay <player> <points>"));
+                    p.sendMessage(col("&7/points reset <player>"));
+                    return true;
+                }
             }
 
             // error messages for extra args.
-            if (args[0].equalsIgnoreCase("set") && p.hasPermission("points.admin")) {
+            if (args[0].equalsIgnoreCase("set")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 p.sendMessage(col("&cSpecify a player and the amount of points!"));
                 p.sendMessage(col("&cUsage: /points set <player> 10"));
                 return true;
             }
 
-            if (args[0].equalsIgnoreCase("give") && p.hasPermission("points.admin") || args[0].equalsIgnoreCase("add") && p.hasPermission("points.admin")) {
+            if (args[0].equalsIgnoreCase("give") || args[0].equalsIgnoreCase("add")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 p.sendMessage(col("&cSpecify a player and the amount of points!"));
                 p.sendMessage(col("&cUsage: /points give <player> 10"));
                 return true;
             }
 
-            if (args[0].equalsIgnoreCase("take") && p.hasPermission("points.admin")) {
+            if (args[0].equalsIgnoreCase("take")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 p.sendMessage(col("&cSpecify a player and the amount of points!"));
                 p.sendMessage(col("&cUsage: /points take <player> 10"));
                 return true;
@@ -78,7 +102,13 @@ public class Points implements CommandExecutor {
                 return true;
             }
 
-            if (args[0].equalsIgnoreCase("reset") && p.hasPermission("points.admin")) {
+            if (args[0].equalsIgnoreCase("reset")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 p.sendMessage(col("&cSpecify a player to reset!"));
                 p.sendMessage(col("&cUsage: /points reset <player>"));
                 return true;
@@ -88,7 +118,13 @@ public class Points implements CommandExecutor {
         }
 
         if (args.length == 2) {
-            if (args[0].equalsIgnoreCase("reset") && p.hasPermission("points.admin")) {
+            if (args[0].equalsIgnoreCase("reset")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 Player playerToReset = Bukkit.getPlayer(args[1]);
 
                 if (playerToReset == null) {
@@ -107,24 +143,42 @@ public class Points implements CommandExecutor {
 
             // more error messages
             if (args[0].equalsIgnoreCase("set")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 p.sendMessage(col("&cSpecify the amount of points!"));
                 p.sendMessage(col("&cUsage: /points set " + args[1] + " 10"));
                 return true;
             }
 
             if (args[0].equalsIgnoreCase("give") || args[0].equalsIgnoreCase("add")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 p.sendMessage(col("&cSpecify the amount of points!"));
                 p.sendMessage(col("&cUsage: /points give " + args[1] + " 10"));
                 return true;
             }
 
             if (args[0].equalsIgnoreCase("take")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 p.sendMessage(col("&cSpecify the amount of points!"));
                 p.sendMessage(col("&cUsage: /points take " + args[1] + " 10"));
                 return true;
             }
 
-            if (args[0].equalsIgnoreCase("pay")) {
+            if (args[0].equalsIgnoreCase("pay") && p.hasPermission("points.admin")) {
                 p.sendMessage(col("&cSpecify the amount of points!"));
                 p.sendMessage(col("&cUsage: /points pay " + args[1] + " 10"));
                 return true;
@@ -135,12 +189,14 @@ public class Points implements CommandExecutor {
 
         if (args.length == 3) {
 
-        }
-
-        if (args.length == 3) {
-
             // start of set
-            if (args[0].equalsIgnoreCase("set") && p.hasPermission("points.admin")) {
+            if (args[0].equalsIgnoreCase("set")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 String UUID;
                 String points = args[2];
                 Player playerToSet = Bukkit.getPlayer(args[1]);
@@ -170,7 +226,13 @@ public class Points implements CommandExecutor {
             }
 
             // start of give
-            if (args[0].equalsIgnoreCase("give") && p.hasPermission("points.admin") || args[0].equalsIgnoreCase("add") && p.hasPermission("points.admin")) {
+            if ((args[0].equalsIgnoreCase("give") || args[0].equalsIgnoreCase("add"))) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 String UUID;
                 String points = args[2];
                 Player playerToGive = Bukkit.getPlayer(args[1]);
@@ -202,7 +264,13 @@ public class Points implements CommandExecutor {
             }
 
             // start of take
-            if (args[0].equalsIgnoreCase("take") && p.hasPermission("points.admin")) {
+            if (args[0].equalsIgnoreCase("take")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
                 String UUID;
                 String points = args[2];
                 Player playerToTake = Bukkit.getPlayer(args[1]);
