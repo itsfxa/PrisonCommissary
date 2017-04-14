@@ -25,7 +25,7 @@ public class Commissary implements CommandExecutor {
         String prefix = main.getConfig().getString("Commissary-Prefix");
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(main.getConfig().getString("Must-Be-Player"));
+            sender.sendMessage(main.getConfig().getString(col("Must-Be-Player")));
             return true;
         }
 

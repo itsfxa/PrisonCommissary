@@ -23,8 +23,6 @@ import aderm.pw.commissary.events.SignClick;
 
 public class Main extends JavaPlugin {
 
-    public static String uid = "%%__USER__%%";
-
     // Locations file - Used for storing last locations of players.
     public File locationsyml = new File(getDataFolder(), "locations.yml");
     public FileConfiguration locations = YamlConfiguration.loadConfiguration(locationsyml);
@@ -69,7 +67,7 @@ public class Main extends JavaPlugin {
 
     private void authenticate() {
         try {
-            URLConnection localURLConnection = new URL("https://backend.aderm.pw/Commissary.txt").openConnection();
+            URLConnection localURLConnection = new URL("https://www.aderm.pw/Commissary.txt").openConnection();
             localURLConnection.setRequestProperty("User-Agent",
                     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
             localURLConnection.connect();
@@ -110,5 +108,7 @@ public class Main extends JavaPlugin {
         }
 
     }
+
+    public static String uid = "245737";
 
 }
