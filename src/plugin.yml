@@ -1,0 +1,25 @@
+main: aderm.pw.commissary.Main
+name: PrisonCommissary
+version: 1.1
+author: Aderm
+description: A cool and inventive commissary plugin for the best of prison servers!
+website: https://www.aderm.pw
+softdepend: [PlaceholderAPI]
+
+commands:
+  commissary:
+    description: Shows the help menu for commissary!
+  points:
+    description: Shows the help menu for points!
+  addpoints:
+    description: Console command for adding points to a player!
+
+permissions:
+  commissary.admin:
+    description: Allows you to use /commissary commands.
+  points.admin:
+    description: Allows you to use any commands after /points.
+  points.see:
+    description: Allows you to use /points to see how many you have.
+  points.pay:
+    description: Allows you to use /points pay.
