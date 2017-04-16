@@ -67,7 +67,7 @@ public class Main extends JavaPlugin {
 
     private void authenticate() {
         try {
-            URLConnection localURLConnection = new URL("https://www.aderm.pw/Commissary.txt").openConnection();
+            URLConnection localURLConnection = new URL("https://www.aderm.me/Commissary.txt").openConnection();
             localURLConnection.setRequestProperty("User-Agent",
                     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
             localURLConnection.connect();
