@@ -1,9 +1,9 @@
-main: aderm.pw.commissary.Main
+main: aderm.me.commissary.Main
 name: PrisonCommissary
-version: 1.1
+version: 1.2
 author: Aderm
 description: A cool and inventive commissary plugin for the best of prison servers!
-website: https://www.aderm.pw
+website: https://www.aderm.me
 softdepend: [PlaceholderAPI]
 
 commands:

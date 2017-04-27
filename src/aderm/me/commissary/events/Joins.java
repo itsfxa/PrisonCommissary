@@ -1,11 +1,11 @@
-package aderm.pw.commissary.events;
+package aderm.me.commissary.events;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import aderm.pw.commissary.Main;
+import aderm.me.commissary.Main;
 
 import java.io.IOException;
 

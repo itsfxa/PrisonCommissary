@@ -1,4 +1,7 @@
-package aderm.pw.commissary;
+
+/* Proof of code being mine. AdermDev @ MCM. 22/04/2017 */
+
+package aderm.me.commissary;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,18 +11,17 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 
-import aderm.pw.commissary.commands.AddPoints;
-import aderm.pw.commissary.events.SignCreate;
+import aderm.me.commissary.commands.AddPoints;
+import aderm.me.commissary.commands.Commissary;
+import aderm.me.commissary.commands.Points;
+import aderm.me.commissary.events.Joins;
+import aderm.me.commissary.events.SignClick;
+import aderm.me.commissary.events.SignCreate;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import aderm.pw.commissary.commands.Commissary;
-import aderm.pw.commissary.commands.Points;
-import aderm.pw.commissary.events.Joins;
-import aderm.pw.commissary.events.SignClick;
 
 public class Main extends JavaPlugin {
 
@@ -35,6 +37,8 @@ public class Main extends JavaPlugin {
     public File commissaryyml = new File(getDataFolder(), "commissaries.yml");
     public FileConfiguration commissaries = YamlConfiguration.loadConfiguration(commissaryyml);
 
+    public static boolean updateAvailable = false;
+
     public void onEnable() {
         registerListeners();
         registerCommands();
@@ -42,8 +46,9 @@ public class Main extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
         saveFiles();
+        updateAvailable();
 
-        System.out.println("[PrisonCommissary] Licensed to: https://www.spigotmc.org/members/" + uid);
+        System.out.println("[PrisonCommissary] Licensed to: http://www.mc-market.org/members/" + uid);
 
         if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             new Placeholder(this).hook();
@@ -57,6 +62,7 @@ public class Main extends JavaPlugin {
         pm.registerEvents(new Joins(this), this);
         pm.registerEvents(new SignClick(this), this);
         pm.registerEvents(new SignCreate(this), this);
+        pm.registerEvents(new UpdateChecker(), this);
     }
 
     private void registerCommands() {
@@ -67,7 +73,7 @@ public class Main extends JavaPlugin {
 
     private void authenticate() {
         try {
-            URLConnection localURLConnection = new URL("https://www.aderm.me/Commissary.txt").openConnection();
+            URLConnection localURLConnection = new URL("https://www.aderm.me/Commissary.php").openConnection();
             localURLConnection.setRequestProperty("User-Agent",
                     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
             localURLConnection.connect();
@@ -79,7 +85,31 @@ public class Main extends JavaPlugin {
                 if (str1.equals(uid)) {
                     getServer().getPluginManager().disablePlugin(this);
                     System.out.println("[PrisonCommissary] Plugin disabled due to it being leaked.");
-                    System.out.println("[PrisonCommissary] Contact @Aderm on spigot for more information.");
+                    System.out.println("[PrisonCommissary] Contact @AdermDev on mcm for more information.");
+                    return;
+                }
+            }
+        } catch (IOException localIOException) {
+            localIOException.printStackTrace();
+        }
+    }
+
+    private void updateAvailable() {
+        try {
+            URLConnection localURLConnection = new URL("https://www.aderm.me/CommissaryUpdate.php").openConnection();
+            localURLConnection.setRequestProperty("User-Agent",
+                    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
+            localURLConnection.connect();
+            BufferedReader localBufferedReader = new BufferedReader(
+                    new InputStreamReader(localURLConnection.getInputStream(), Charset.forName("UTF-8")));
+            String str1;
+
+            while ((str1 = localBufferedReader.readLine()) != null) {
+                if (!str1.equals(getDescription().getVersion())) {
+                    updateAvailable = true; // update is available
+                    return;
+                } else {
+                    updateAvailable = false; // no update
                     return;
                 }
             }
@@ -109,6 +139,6 @@ public class Main extends JavaPlugin {
 
     }
 
-    public static String uid = "245737";
+    public static String uid = "63522";
 
 }

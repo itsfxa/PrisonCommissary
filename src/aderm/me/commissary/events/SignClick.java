@@ -1,4 +1,4 @@
-package aderm.pw.commissary.events;
+package aderm.me.commissary.events;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import aderm.pw.commissary.Main;
+import aderm.me.commissary.Main;
 
 public class SignClick implements Listener {
 

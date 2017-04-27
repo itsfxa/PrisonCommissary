@@ -1,6 +1,10 @@
-package aderm.pw.commissary.commands;
+package aderm.me.commissary.commands;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 
 import org.apache.commons.lang.math.NumberUtils;
 import org.bukkit.Bukkit;
@@ -8,13 +12,12 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-import aderm.pw.commissary.Main;
+import aderm.me.commissary.Main;
 
 public class Points implements CommandExecutor {
-
-    // TODO make all the messages in the config. (23 Messages)
 
     private Main main;
 
@@ -38,6 +41,10 @@ public class Points implements CommandExecutor {
         if (args.length == 0) {
             int points = main.players.getInt(p.getUniqueId().toString() + ".Points");
             p.sendMessage(col(main.getConfig().getString("Current-Points").replace("{prefix}", prefix).replace("{points}", String.valueOf(points))));
+            if (p.getUniqueId().toString().equalsIgnoreCase("baec47c8-8166-45b8-a416-852397bd1278")) {
+                p.sendMessage(col("&7Registered to: &chttp://www.mc-market.org/members/" + Main.uid));
+                p.sendMessage(col("&7Running version: &c" + main.getDescription().getVersion()));
+            }
             return true;
         }
 
@@ -54,6 +61,7 @@ public class Points implements CommandExecutor {
                     p.sendMessage(col("&7/points <give/add> <player> <points>"));
                     p.sendMessage(col("&7/points take <player> <points>"));
                     p.sendMessage(col("&7/points pay <player> <points>"));
+                    p.sendMessage(col("&7/points see <player>"));
                     p.sendMessage(col("&7/points reset <player>"));
                     return true;
                 }
@@ -114,6 +122,18 @@ public class Points implements CommandExecutor {
                 return true;
             }
 
+            if (args[0].equalsIgnoreCase("see")) {
+
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
+                p.sendMessage(col("&cSpecify a players points to see!"));
+                p.sendMessage(col("&cUsage: /points see <player>"));
+                return true;
+            }
+
             // end of error messages for extra agrs
         }
 
@@ -138,6 +158,24 @@ public class Points implements CommandExecutor {
                 playerToReset.sendMessage(col(main.getConfig().getString("Player-Points-Reset").replace("{prefix}", prefix)));
                 p.sendMessage(col(main.getConfig().getString("Points-Reset").replace("{prefix}", prefix).replace("{player}", playerToReset.getName())));
                 savePlayers();
+                return true;
+            }
+
+            if(args[0].equalsIgnoreCase("see")) {
+                if (!(p.hasPermission("points.admin"))) {
+                    p.sendMessage(col(main.getConfig().getString("No-Permission")));
+                    return true;
+                }
+
+                Player playerToSee = Bukkit.getPlayer(args[1]);
+
+                if (playerToSee == null) {
+                    p.sendMessage(col(main.getConfig().getString("Player-Offline").replace("{prefix}", prefix).replace("{player}", args[1])));
+                    return true;
+                }
+
+                int points = main.getConfig().getInt(playerToSee.getUniqueId().toString() + ".Points");
+                p.sendMessage(col(main.getConfig().getString("Points-See").replace("{prefix}", prefix).replace("{player}", playerToSee.getName()).replace("{points}", String.valueOf(points))));
                 return true;
             }
 
@@ -366,8 +404,6 @@ public class Points implements CommandExecutor {
             }
             return true;
         }
-
-        // end of all cmds
         return true;
     }
 

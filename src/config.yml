@@ -22,7 +22,7 @@ Commissary-Time-Set: '{prefix} &7New time for &c{commissary} &7is &c{time} &7sec
 Commissary-Already-Exists: '{prefix} &7The commissary &c{commissary} &7already exists!' # {commissary} = Commissary name.
 Not-A-Valid-Price: '{prefix} &7The price &c{price} &7is not a valid number!' # {price} = Price specified.
 Not-A-Valid-Time: '{prefix} &7The time &c{time} &7is not a valid number!' # {time} = Time specified.
-Commissary-Created: '{prefix} &7Commissary &c{commissary} &7created with a price of &c{price} &points and a time of &c{time} &7seconds.' # {commissary} = Commissary name. - {price} = Points to enter - {time} = Time in seconds you get in commissary.
+Commissary-Created: '{prefix} &7Commissary &c{commissary} &7created with a price of &c{price} &7points and a time of &c{time} &7seconds.' # {commissary} = Commissary name. - {price} = Points to enter - {time} = Time in seconds you get in commissary.
 #######################
 
 # Points messages #
@@ -44,6 +44,7 @@ Not-Enough-To-Pay-Player: '{prefix} &cYou do not have enough points to pay that 
 Pay-Less-Than-0-Points: '{prefix} &cYou cannot pay less than 0 points!'
 Paid-Points: '{prefix} &7You paid &c{points} &7point(s) to &c{player}'
 Was-Paid-Points: '{prefix} &7You were paid &c{points} &7point(s) by &c{player}'
+Points-See: '{prefix} &c{player} &7has &c{points} &7points'
 ###################
 
 # AddPoints Messages#

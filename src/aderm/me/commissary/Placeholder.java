@@ -1,4 +1,4 @@
-package aderm.pw.commissary;
+package aderm.me.commissary;
 
 import org.bukkit.entity.Player;
 

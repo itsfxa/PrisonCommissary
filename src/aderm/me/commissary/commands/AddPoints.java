@@ -1,6 +1,6 @@
-package aderm.pw.commissary.commands;
+package aderm.me.commissary.commands;
 
-import aderm.pw.commissary.Main;
+import aderm.me.commissary.Main;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -9,7 +9,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 
 public class AddPoints implements CommandExecutor {

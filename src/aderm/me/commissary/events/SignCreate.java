@@ -1,6 +1,6 @@
-package aderm.pw.commissary.events;
+package aderm.me.commissary.events;
 
-import aderm.pw.commissary.Main;
+import aderm.me.commissary.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

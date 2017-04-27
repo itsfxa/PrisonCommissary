@@ -1,6 +1,6 @@
-package aderm.pw.commissary.commands;
+package aderm.me.commissary.commands;
 
-import aderm.pw.commissary.Main;
+import aderm.me.commissary.Main;
 import org.apache.commons.lang.math.NumberUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -50,21 +50,9 @@ public class Commissary implements CommandExecutor {
                 return true;
             }
 
-
-            // args 1 error messages
-            if (args.length == 1) {
-
-                if (args[0].equalsIgnoreCase("about")) {
-                    if (p.getUniqueId().toString().equalsIgnoreCase("54d23814-998e-4f74-9a3f-b3ccc5ee8c0b")) {
-                        p.sendMessage(col("&7Registered to: &chttps://www.spigotmc.org/members/" + Main.uid));
-                        p.sendMessage(col("&7Running version: &c" + main.getDescription().getVersion()));
-                        return true;
-                    } else {
-                        return true;
-                    }
-                }
-
-                if(args[0].equalsIgnoreCase("reload")) {
+        // args 1 error messages
+        if (args.length == 1) {
+                if (args[0].equalsIgnoreCase("reload")) {
                     main.reloadConfig();
                     p.sendMessage(col(main.getConfig().getString("Config-Reloaded")));
                     return true;
@@ -255,8 +243,8 @@ public class Commissary implements CommandExecutor {
                     String name = args[1];
                     String price = args[2];
                     String time = args[3];
-
                     if (main.commissaries.contains(name)) {
+
                         p.sendMessage(col(main.getConfig().getString("Commissary-Already-Exists").replace("{commissary}", name).replace("{prefix}", prefix)));
                         return true;
                     }
