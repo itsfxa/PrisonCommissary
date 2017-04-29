@@ -139,6 +139,6 @@ public class Main extends JavaPlugin {
 
     }
 
-    public static String uid = "63522";
+    public static String uid = "USER";
 
 }
