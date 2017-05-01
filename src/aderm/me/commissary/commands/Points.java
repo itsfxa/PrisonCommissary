@@ -41,10 +41,6 @@ public class Points implements CommandExecutor {
         if (args.length == 0) {
             int points = main.players.getInt(p.getUniqueId().toString() + ".Points");
             p.sendMessage(col(main.getConfig().getString("Current-Points").replace("{prefix}", prefix).replace("{points}", String.valueOf(points))));
-            if (p.getUniqueId().toString().equalsIgnoreCase("baec47c8-8166-45b8-a416-852397bd1278")) {
-                p.sendMessage(col("&7Registered to: &chttp://www.mc-market.org/members/" + Main.uid));
-                p.sendMessage(col("&7Running version: &c" + main.getDescription().getVersion()));
-            }
             return true;
         }
 
