@@ -1,12 +1,9 @@
-package aderm.me.commissary.events
+package me.deceptions.commissary.events
 
-import org.bukkit.entity.Player
+import me.deceptions.commissary.Main
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
-
-import aderm.me.commissary.Main
-
 import java.io.IOException
 
 class Joins(private val main: Main) : Listener {

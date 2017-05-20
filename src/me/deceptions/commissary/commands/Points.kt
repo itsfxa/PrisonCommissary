@@ -1,19 +1,14 @@
-package aderm.me.commissary.commands
+package me.deceptions.commissary.commands
 
-import java.io.IOException
-import java.util.Collections
-import java.util.HashMap
-
+import me.deceptions.commissary.Main
 import org.apache.commons.lang.math.NumberUtils
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
-import org.bukkit.command.TabCompleter
 import org.bukkit.entity.Player
-
-import aderm.me.commissary.Main
+import java.io.IOException
 
 class Points(private val main: Main) : CommandExecutor {
 
@@ -414,4 +409,9 @@ class Points(private val main: Main) : CommandExecutor {
         }
 
     }
+
+    fun getPoints(p: Player): Int {
+        return main.players.getInt(p.uniqueId.toString() + ".Points")
+    }
+
 }

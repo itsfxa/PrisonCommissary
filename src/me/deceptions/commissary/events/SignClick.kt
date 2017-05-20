@@ -1,7 +1,6 @@
-package aderm.me.commissary.events
+package me.deceptions.commissary.events
 
-import java.io.IOException
-
+import me.deceptions.commissary.Main
 import org.bukkit.ChatColor
 import org.bukkit.Location
 import org.bukkit.Material
@@ -12,8 +11,7 @@ import org.bukkit.event.Listener
 import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.scheduler.BukkitRunnable
-
-import aderm.me.commissary.Main
+import java.io.IOException
 
 class SignClick(private val main: Main) : Listener {
 
@@ -56,10 +54,10 @@ class SignClick(private val main: Main) : Listener {
                         val x = main.commissaries.getDouble(name + ".X")
                         val y = main.commissaries.getDouble(name + ".Y")
                         val z = main.commissaries.getDouble(name + ".Z")
-                        val yaw = main.commissaries.getDouble(name + ".Yaw") as Float
-                        val pitch = main.commissaries.getDouble(name + ".Pitch") as Float
+                        val yaw = main.commissaries.getDouble(name + ".Yaw").toFloat()
+                        val pitch = main.commissaries.getDouble(name + ".Pitch").toFloat()
 
-                        p.teleport(Location(p.world), x, y, z, yaw, pitch))
+                        p.teleport(Location(p.world, x, y, z, yaw, pitch))
                     } else {
                         p.sendMessage(col(main.config.getString("Not-Enough-To-Enter").replace("{prefix}", prefix)))
                     }
@@ -124,8 +122,8 @@ class SignClick(private val main: Main) : Listener {
         val x = main.locations.getDouble(UUID + ".X")
         val y = main.locations.getDouble(UUID + ".Y")
         val z = main.locations.getDouble(UUID + ".Z")
-        val yaw = main.locations.getDouble(UUID + ".Yaw") as Float
-        val pitch = main.locations.getDouble(UUID + ".Pitch") as Float
+        val yaw = main.locations.getDouble(UUID + ".Yaw").toFloat()
+        val pitch = main.locations.getDouble(UUID + ".Pitch").toFloat()
         p.teleport(Location(p.world, x, y, z, yaw, pitch))
         p.sendMessage(col(main.config.getString("Teleported-To-Original-Location").replace("{prefix}", prefix)))
     }

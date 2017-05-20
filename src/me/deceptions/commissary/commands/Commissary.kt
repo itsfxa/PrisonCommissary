@@ -1,6 +1,6 @@
-package aderm.me.commissary.commands
+package me.deceptions.commissary.commands
 
-import aderm.me.commissary.Main
+import me.deceptions.commissary.Main
 import org.apache.commons.lang.math.NumberUtils
 import org.bukkit.ChatColor
 import org.bukkit.Location

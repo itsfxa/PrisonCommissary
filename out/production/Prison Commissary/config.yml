@@ -1,0 +1,68 @@
+Commissary-Prefix: '&7[&cCommissary&7]'
+Points-Prefix: '&7[&cPoints&7]'
+No-Permission: '&cYou do not have permission to use this command!'
+Must-Be-Player: '&cYou must be a player to run this command!'
+Not-A-Valid-Number: '&cThat is not a valid number!'
+Config-Reloaded: '&7The config was reloaded!'
+
+# Commissary sign config #
+First-Line: '&8[&cCommissary&8]'
+Second-Line: '&a{name}' # Name = The commissary name.
+Third-Line: '&c{points} &8points' # {points} = The amount of points it takes to enter.
+Fourth-Line: '&c{seconds} &8seconds' # {seconds} = The amount of seconds you're in there for.
+##########################
+
+# Commissary messages #
+Commissary-Does-Not-Exist: '{prefix} &cThat commissary does not exist!'
+Commissary-SetTp: '{prefix} &7Location updated the for Commissary: &c{commissary}' # {commissary} = Commissary name.
+Commissary-TP: '{prefix} &7You teleported to the Commissary: &c{commissary}'
+Commissary-Removed: '{prefix} &7Commissary &c{commissary} &7removed!' # {commissary} = Commissary name.
+Commissary-Setprice: '{prefix} &7Price for &c{commissary} &7set to &c{price} &7points.' # {commissary} = Commissary name. - {price} = New price.
+Commissary-Time-Set: '{prefix} &7New time for &c{commissary} &7is &c{time} &7seconds.' # {commissary} = Commissary name. - {time} = New time.
+Commissary-Already-Exists: '{prefix} &7The commissary &c{commissary} &7already exists!' # {commissary} = Commissary name.
+Not-A-Valid-Price: '{prefix} &7The price &c{price} &7is not a valid number!' # {price} = Price specified.
+Not-A-Valid-Time: '{prefix} &7The time &c{time} &7is not a valid number!' # {time} = Time specified.
+Commissary-Created: '{prefix} &7Commissary &c{commissary} &7created with a price of &c{price} &7points and a time of &c{time} &7seconds.' # {commissary} = Commissary name. - {price} = Points to enter - {time} = Time in seconds you get in commissary.
+#######################
+
+# Points messages #
+Current-Points: '{prefix} &7You have &c{points} &7point(s).' # {points} = Your points.
+Player-Offline: '{prefix} &c{player} &7is offline!'
+Player-Points-Reset: '{prefix} &7Your points were reest to &c0' # This message is sent to the player who's points are reset.
+Points-Reset: '{prefix} &7You reset &c{player}&7''s points.' # This message is sent to the player who ran the command.
+Player-Points-Set: '{prefix} &7Your points were set to &c{points}' # {points} = Points that were set.
+Points-Set: '{prefix} &7You set &c{player}&7''s points to &c{points}' # {points} = Points that were set. - {player} = Players points who was set.
+Points-Set-Equals-<0: '{prefix} &cYou cannot set points lower than 0'
+Points-Add-Equals-0: '{prefix} &cYou cannot add points 0 or below!'
+Player-Points-Added: '{prefix} &7You were given &c{points} &7points.' # {points} = Points that were given.
+Points-Added: '{prefix} &7You gave &c{player} {points} &7points.' # {player} = Player points were given to. - {points} = Points that were given.
+Player-Points-Taken: '{prefix} &7You have been deducted &c{points} &7points.' # {points} =
+Points-Taken: '{prefix} &7You deducted &c{points} &7points from &c{player}'
+Points-Take-Equals-<0: '{prefix} &7That player has < 0 points.'
+Points-Pay-Yourself: '{prefix} &cYou cannot pay yourself points!'
+Not-Enough-To-Pay-Player: '{prefix} &cYou do not have enough points to pay that player!'
+Pay-Less-Than-0-Points: '{prefix} &cYou cannot pay less than 0 points!'
+Paid-Points: '{prefix} &7You paid &c{points} &7point(s) to &c{player}'
+Was-Paid-Points: '{prefix} &7You were paid &c{points} &7point(s) by &c{player}'
+Points-See: '{prefix} &c{player} &7has &c{points} &7points'
+###################
+
+# AddPoints Messages#
+AddPoints-Player: '{prefix} &cYou cannot run this command!'
+AddPoints-Help: '{prefix} &cTry /addpoints <player> <points>!'
+AddPoints-Points: '{prefix} &cTry /addpoints {player} <points>' # {player} = Player specified.
+AddPoints-Added: '{prefix} &7You added &c{points} &7points to &c{player}' # {points} = Points added. - {player} = Player who was given points.
+AddPoints-Given: '{prefix} &7You were given &c{points} &7points!'
+AddPoints-Less-Than-0: '{prefix} &7You cannot add points less than or equal to 0!'
+AddPoints-Offline: '{prefix} &c{player} &7is offline!'
+#####################
+
+# Sign Create Messages #
+Cannot-Create-Signs: '{prefix} &cYou do not have the permission to create commissary signs!'
+########################
+
+# Sign Click Messages #
+Deducted-Points: '{prefix} &7You have been deducted &c{points} &7points'
+Not-Enough-To-Enter: '{prefix} &cYou do not have enough points to enter Commissary!'
+Teleported-To-Original-Location: '{prefix} &7You have been teleported to your last position.'
+#######################

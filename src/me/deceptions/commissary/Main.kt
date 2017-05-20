@@ -1,11 +1,11 @@
-package aderm.me.commissary
+package me.deceptions.commissary
 
-import aderm.me.commissary.commands.AddPoints
-import aderm.me.commissary.commands.Commissary
-import aderm.me.commissary.commands.Points
-import aderm.me.commissary.events.Joins
-import aderm.me.commissary.events.SignClick
-import aderm.me.commissary.events.SignCreate
+import me.deceptions.commissary.commands.AddPoints
+import me.deceptions.commissary.commands.Commissary
+import me.deceptions.commissary.commands.Points
+import me.deceptions.commissary.events.Joins
+import me.deceptions.commissary.events.SignClick
+import me.deceptions.commissary.events.SignCreate
 import org.bukkit.Bukkit
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
@@ -35,8 +35,9 @@ class Main : JavaPlugin() {
         saveDefaultConfig()
         saveFiles()
 
+        // register PlaceholderAPI placeholders.
         if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
-            Placeholder(this).hook()
+            PlaceholderAPI(this).hook()
         } else {
             println("[PrisonCommissary] PlaceholderAPI not found. - Commissary point placeholder will not work!")
         }

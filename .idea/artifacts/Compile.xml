@@ -3,7 +3,8 @@
     <output-path>$USER_HOME$/Desktop</output-path>
     <root id="archive" name="Prison Commissary.jar">
       <element id="module-output" name="Prison Commissary" />
-      <element id="library" level="project" name="spigot-1.8.8" />
+      <element id="library" level="project" name="KotlinJavaRuntime" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-runtime.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
