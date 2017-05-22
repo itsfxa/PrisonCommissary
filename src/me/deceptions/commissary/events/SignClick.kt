@@ -15,7 +15,7 @@ import java.io.IOException
 
 class SignClick(private val main: Main) : Listener {
 
-    private var CName: String? = null
+    lateinit var CName: String
 
     @EventHandler
     fun signClick(e: PlayerInteractEvent) {
@@ -28,7 +28,7 @@ class SignClick(private val main: Main) : Listener {
             if (e.clickedBlock.type === Material.WALL_SIGN) {
                 val sign = e.clickedBlock.state as Sign
 
-                if (sign.getLine(0).equals(col(main.config.getString("First-Line")))) {
+                if (sign.getLine(0) == col(main.config.getString("First-Line"))) {
                     val name = ChatColor.stripColor(sign.getLine(1))
 
                     if (!main.commissaries.contains(name)) {

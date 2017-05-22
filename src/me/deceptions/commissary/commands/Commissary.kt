@@ -32,7 +32,7 @@ class Commissary(private val main: Main) : CommandExecutor {
         if (p.hasPermission("commissary.admin")) {
 
             // Help msg for commissary commands.
-            if (args.size == 0) {
+            if (args.isEmpty()) {
                 p.sendMessage(col("&cCommissary help page:"))
                 p.sendMessage(col("&7/commissary create <name> <points> <time in seconds>"))
                 p.sendMessage(col("&7/commissary tp <name>"))

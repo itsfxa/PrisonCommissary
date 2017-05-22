@@ -29,6 +29,7 @@ class Main : JavaPlugin() {
     var commissaries: FileConfiguration = YamlConfiguration.loadConfiguration(commissaryyml)
 
     override fun onEnable() {
+        super.onEnable()
         registerListeners()
         registerCommands()
         config.options().copyDefaults(true)

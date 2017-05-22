@@ -24,7 +24,7 @@ class Points(private val main: Main) : CommandExecutor {
         val p = sender
 
         // help msg for points
-        if (args.size == 0) {
+        if (args.isEmpty()) {
             val points = main.players.getInt(p.uniqueId.toString() + ".Points")
             p.sendMessage(col(main.config.getString("Current-Points").replace("{prefix}", prefix).replace("{points}", points.toString())))
             return true

@@ -22,7 +22,7 @@ class AddPoints(private val main: Main) : CommandExecutor {
             return true
         }
 
-        if (args.size == 0) {
+        if (args.isEmpty()) {
             sender.sendMessage(col(main.config.getString("AddPoints-Help").replace("{prefix}", prefix)))
             return true
         }
