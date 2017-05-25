@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="367278fe-6b68-40f7-a16e-51016d88ff1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config.yml" afterPath="$PROJECT_DIR$/src/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/deceptions/commissary/Main.kt" afterPath="$PROJECT_DIR$/src/me/deceptions/commissary/Main.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugin.yml" afterPath="$PROJECT_DIR$/src/plugin.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt" afterPath="$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +61,8 @@
       <file leaf-file-name="Tickets.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="512">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
                 <element signature="e#43#255#0" expanded="true" />
               </folding>
@@ -76,8 +73,8 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
+            <state relative-caret-position="80">
+              <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -177,10 +174,10 @@
         <option value="$PROJECT_DIR$/src/me/deceptions/commissary/commands/AddPoints.kt" />
         <option value="$PROJECT_DIR$/src/me/deceptions/commissary/events/SignClick.kt" />
         <option value="$PROJECT_DIR$/src/me/deceptions/commissary/commands/Commissary.kt" />
-        <option value="$PROJECT_DIR$/src/config.yml" />
-        <option value="$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt" />
         <option value="$PROJECT_DIR$/src/me/deceptions/commissary/Main.kt" />
         <option value="$PROJECT_DIR$/src/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt" />
+        <option value="$PROJECT_DIR$/src/config.yml" />
       </list>
     </option>
   </component>
@@ -863,12 +860,12 @@
       <workItem from="1495269749081" duration="5984000" />
       <workItem from="1495281218841" duration="854000" />
       <workItem from="1495469601452" duration="4763000" />
-      <workItem from="1495723793837" duration="1774000" />
+      <workItem from="1495723793837" duration="2398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114365000" />
+    <option name="totallyTimeSpent" value="114989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1213,7 +1210,7 @@
         <state relative-caret-position="17">
           <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="30" />
           <folding>
-            <element signature="e#41#448#0" expanded="true" />
+            <element signature="e#41#448#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1242,14 +1239,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -1268,10 +1257,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="512">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
             <element signature="e#43#255#0" expanded="true" />
           </folding>
