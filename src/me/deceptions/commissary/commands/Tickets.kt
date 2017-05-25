@@ -30,7 +30,17 @@ class Tickets(val main: Main) : CommandExecutor {
             return true
         }
 
+        if(args.size == 1) {
+            return true
+        }
 
+        if(args.size == 2) {
+            return true
+        }
+
+        if(args.size == 3) {
+            return true
+        }
 
         return false
     }
