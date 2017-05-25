@@ -21,24 +21,40 @@ class Tickets(val main: Main) : CommandExecutor {
         val p = sender
 
         // Help message
-        if(args.isEmpty()) {
+        if (args.isEmpty()) {
             p.sendMessage(col("&7Tickets help page:"))
             p.sendMessage(col("&7/ticket give <commissary>"))
-            if(main.config.getBoolean("Buy-Tickets-Enabled")) {
+            if (main.config.getBoolean("Buy-Tickets-Enabled")) {
                 p.sendMessage(col("&7/ticket buy <commissary>"))
             }
             return true
         }
 
-        if(args.size == 1) {
+        // Currently all error messages.
+        if (args.size == 1) {
+
             return true
         }
 
-        if(args.size == 2) {
+        // Currently all error messages, again.
+        if (args.size == 2) {
             return true
         }
 
-        if(args.size == 3) {
+        // Actual commands.
+        if (args.size == 3) {
+            if (args[0].equals("give", ignoreCase = true)) {
+                TODO("Add the code here")
+                return true
+            }
+
+
+            return true
+        }
+
+        // Args too large message
+        if (args.size >= 4) {
+
             return true
         }
 

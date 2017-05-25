@@ -60,8 +60,8 @@
       <file leaf-file-name="Tickets.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+            <state relative-caret-position="613">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="e#43#255#0" expanded="true" />
               </folding>
@@ -859,12 +859,12 @@
       <workItem from="1495269749081" duration="5984000" />
       <workItem from="1495281218841" duration="854000" />
       <workItem from="1495469601452" duration="4763000" />
-      <workItem from="1495723793837" duration="2515000" />
+      <workItem from="1495723793837" duration="4162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115106000" />
+    <option name="totallyTimeSpent" value="116753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1266,8 +1266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="613">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="e#43#255#0" expanded="true" />
           </folding>
