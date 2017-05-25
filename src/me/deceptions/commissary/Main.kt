@@ -3,6 +3,7 @@ package me.deceptions.commissary
 import me.deceptions.commissary.commands.AddPoints
 import me.deceptions.commissary.commands.Commissary
 import me.deceptions.commissary.commands.Points
+import me.deceptions.commissary.commands.Tickets
 import me.deceptions.commissary.events.Joins
 import me.deceptions.commissary.events.SignClick
 import me.deceptions.commissary.events.SignCreate
@@ -55,6 +56,7 @@ class Main : JavaPlugin() {
         getCommand("commissary").executor = Commissary(this)
         getCommand("points").executor = Points(this)
         getCommand("addpoints").executor = AddPoints(this)
+        getCommand("ticket").executor = Tickets(this)
     }
 
     private fun saveFiles() {

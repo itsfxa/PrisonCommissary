@@ -1,3 +1,6 @@
+# Options #
+Buy-Tickets-Enabled: true # Should you be able to buy tickets?
+
 Commissary-Prefix: '&7[&cCommissary&7]'
 Points-Prefix: '&7[&cPoints&7]'
 No-Permission: '&cYou do not have permission to use this command!'
