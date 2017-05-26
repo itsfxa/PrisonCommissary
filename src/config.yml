@@ -70,3 +70,13 @@ Deducted-Points: '{prefix} &7You have been deducted &c{points} &7points'
 Not-Enough-To-Enter: '{prefix} &cYou do not have enough points to enter Commissary!'
 Teleported-To-Original-Location: '{prefix} &7You have been teleported to your last position.'
 #######################
+
+# Ticket messages #
+Commissary-Name-Does-Not-Exist: '{prefix} &cThat commissary does not exist!'
+Give-Ticket-Inventory-Full: '{prefix} &cThat player''s inventory is full!'
+
+# Ticket options #
+Ticket-Item: 'PAPER' # If it's Dirt for instance, make it full caps. DIRT. If it was two words, like Sea Lantern, it would be SEA_LANTERN. - Names: http://minecraft-ids.grahamedgecombe.com/
+Ticket-Name: '&8{commissary} Ticket' # {commissary} = Commissary name.
+Ticket-Lore1: 'Used for getting into'
+Ticket-Lore2: 'commissaries'

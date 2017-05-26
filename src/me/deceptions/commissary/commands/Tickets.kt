@@ -1,17 +1,24 @@
 package me.deceptions.commissary.commands
 
 import me.deceptions.commissary.Main
+import org.bukkit.Bukkit
 import org.bukkit.ChatColor
+import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.bukkit.inventory.ItemStack
+import org.bukkit.inventory.meta.ItemMeta
+import java.util.ArrayList
+
+
 
 class Tickets(val main: Main) : CommandExecutor {
 
     override fun onCommand(sender: CommandSender, cmd: Command, commandLabel: String, args: Array<String>): Boolean {
 
-        val prefix = main.config.getString("Tickets-Prefix")
+        val prefix = main.config.getString("Ticket-Prefix")
 
         if (sender !is Player) {
             sender.sendMessage(main.config.getString("Must-Be-Player"))
@@ -23,7 +30,7 @@ class Tickets(val main: Main) : CommandExecutor {
         // Help message
         if (args.isEmpty()) {
             p.sendMessage(col("&7Tickets help page:"))
-            p.sendMessage(col("&7/ticket give <commissary>"))
+            p.sendMessage(col("&7/ticket give <player> <commissary name>"))
             if (main.config.getBoolean("Buy-Tickets-Enabled")) {
                 p.sendMessage(col("&7/ticket buy <commissary>"))
             }
@@ -44,10 +51,42 @@ class Tickets(val main: Main) : CommandExecutor {
         // Actual commands.
         if (args.size == 3) {
             if (args[0].equals("give", ignoreCase = true)) {
-                TODO("Add the code here")
+                val target = Bukkit.getPlayer(args[1])
+                val ticketName = args[2]
+
+                if (!main.commissaries.contains(ticketName)) {
+                    p.sendMessage(col(main.config.getString("Commissary-Name-Does-Not-Exist").replace("{prefix}", prefix)))
+                    return true
+                }
+
+                if (target == null) {
+                    p.sendMessage(col(main.config.getString("Player-Offline").replace("{prefix}", prefix).replace("{player}", args[2])))
+                    return true
+                }
+
+                if (target.inventory.firstEmpty() < 0) {
+                    p.sendMessage(col(main.config.getString("Give-Ticket-Inventory-Full").replace("{prefix}", prefix)))
+                    return true
+                }
+
+                val lore = ArrayList<String>()
+                val ticket: ItemStack = ItemStack(Material.valueOf(main.config.getString("Ticket-Item")))
+                val ticketNameConfig = main.config.getString("Ticket-Name")
+                val ticketMeta: ItemMeta = ticket.itemMeta
+                ticketMeta.displayName = col(ticketNameConfig).replace("{commissary}", ticketName)
+                lore.add(main.config.getString(col("Ticket-Lore1")))
+                lore.add(main.config.getString(col("Ticket-Lore2")))
+                ticketMeta.lore = lore
+                ticket.itemMeta = ticketMeta
+                target.inventory.addItem(ticket)
                 return true
             }
 
+
+            // new command, buy.
+            if (args[0].equals("buy", ignoreCase = true)) {
+                return true
+            }
 
             return true
         }

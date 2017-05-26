@@ -1,6 +1,6 @@
 main: me.deceptions.commissary.Main
 name: PrisonCommissary
-version: 1.3
+version: 1.4
 author: FXA
 description: A cool and inventive commissary plugin for the best of prison servers!
 website: https://deceptions.me
@@ -13,6 +13,8 @@ commands:
     description: Shows the help menu for points!
   addpoints:
     description: Console command for adding points to a player!
+  ticket:
+    description: Allows tickets to be used in the plugin!
 
 permissions:
   commissary.admin:
