@@ -12,8 +12,6 @@ import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.ItemMeta
 import java.util.ArrayList
 
-
-
 class Tickets(val main: Main) : CommandExecutor {
 
     override fun onCommand(sender: CommandSender, cmd: Command, commandLabel: String, args: Array<String>): Boolean {
@@ -39,7 +37,7 @@ class Tickets(val main: Main) : CommandExecutor {
 
         // Currently all error messages.
         if (args.size == 1) {
-
+            // add the error messages, stop being lazy.
             return true
         }
 

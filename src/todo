@@ -1,0 +1,16 @@
+TODO:
+    Tickets Class:
+        Finish the buy command.
+        Make sure the give command works fine.
+        Add error messages where due.
+
+    SignClick Class:
+        Add integration for tickets.
+        Make sure the tickets are taken from the players, and only one.
+
+    (New Class) TicketsConsole:
+        Add a console command for tickets so they can be rewarded on votes etc.
+
+    General:
+        Update version to 1.5
+        Git commit changes whilst going along.

@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="367278fe-6b68-40f7-a16e-51016d88ff1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Adam.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Compile.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Compile.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/todo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config.yml" afterPath="$PROJECT_DIR$/src/config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt" afterPath="$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -43,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
-              <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+              <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -59,14 +57,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tickets.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tickets.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="80" column="48" lean-forward="true" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+            <state relative-caret-position="68">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#43#414#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="todo" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/todo">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -179,6 +187,7 @@
         <option value="$PROJECT_DIR$/src/plugin.yml" />
         <option value="$PROJECT_DIR$/src/config.yml" />
         <option value="$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt" />
+        <option value="$PROJECT_DIR$/src/todo" />
       </list>
     </option>
   </component>
@@ -874,12 +883,12 @@
       <workItem from="1495829106777" duration="77000" />
       <workItem from="1495829213588" duration="179000" />
       <workItem from="1495829522058" duration="67000" />
-      <workItem from="1495829623210" duration="2892000" />
+      <workItem from="1495829623210" duration="3332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126353000" />
+    <option name="totallyTimeSpent" value="126793000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -945,13 +954,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/events/Joins.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="69" lean-forward="false" selection-start-line="23" selection-start-column="69" selection-end-line="23" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1254,7 +1256,7 @@
     <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
-          <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1277,11 +1279,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/deceptions/commissary/commands/Tickets.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="80" column="48" lean-forward="true" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+        <state relative-caret-position="68">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#43#414#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/todo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
