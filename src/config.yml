@@ -78,5 +78,7 @@ Give-Ticket-Inventory-Full: '{prefix} &cThat player''s inventory is full!'
 # Ticket options #
 Ticket-Item: 'PAPER' # If it's Dirt for instance, make it full caps. DIRT. If it was two words, like Sea Lantern, it would be SEA_LANTERN. - Names: http://minecraft-ids.grahamedgecombe.com/
 Ticket-Name: '&8{commissary} Ticket' # {commissary} = Commissary name.
+Ticket-Lore1-Enabled: true
+Ticket-Lore2-Enabled: true
 Ticket-Lore1: 'Used for getting into'
 Ticket-Lore2: 'commissaries'

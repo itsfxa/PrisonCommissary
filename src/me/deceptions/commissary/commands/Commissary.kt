@@ -237,7 +237,6 @@ class Commissary(private val main: Main) : CommandExecutor {
                     val price = args[2]
                     val time = args[3]
                     if (main.commissaries.contains(name)) {
-
                         p.sendMessage(col(main.config.getString("Commissary-Already-Exists").replace("{commissary}", name).replace("{prefix}", prefix)))
                         return true
                     }

@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.ItemMeta
-import java.util.ArrayList
+import java.util.*
 
 class Tickets(val main: Main) : CommandExecutor {
 
@@ -72,9 +72,21 @@ class Tickets(val main: Main) : CommandExecutor {
                 val ticketNameConfig = main.config.getString("Ticket-Name")
                 val ticketMeta: ItemMeta = ticket.itemMeta
                 ticketMeta.displayName = col(ticketNameConfig).replace("{commissary}", ticketName)
-                lore.add(main.config.getString(col("Ticket-Lore1")))
-                lore.add(main.config.getString(col("Ticket-Lore2")))
-                ticketMeta.lore = lore
+
+                if(main.config.getBoolean("Ticket-Lore1-Enabled")) {
+                    if(main.config.getString("Ticket-Lore1") != "") {
+                        lore.add(col(main.config.getString("Ticket-Lore1")))
+                    }
+                }
+
+                if(main.config.getBoolean("Ticket-Lore2-Enabled")) {
+                    if(main.config.getString("Ticket-Lore2") != "") {
+                        lore.add(col(main.config.getString("Ticket-Lore2")))
+                    }
+                }
+                if(!lore.isEmpty()) {
+                    ticketMeta.lore = lore
+                }
                 ticket.itemMeta = ticketMeta
                 target.inventory.addItem(ticket)
                 return true
