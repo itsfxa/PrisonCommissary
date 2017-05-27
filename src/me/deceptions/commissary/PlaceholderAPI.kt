@@ -7,7 +7,7 @@ class PlaceholderAPI(private val main: Main) : EZPlaceholderHook(main, "prisonco
 
     override fun onPlaceholderRequest(p: Player?, identifier: String): String? {
         if (identifier == "points") {
-            return main.players.getInt(p!!.uniqueId.toString() + ".Points").toString()
+            return main.players.getInt(p?.uniqueId.toString() + ".Points").toString()
         }
         if (p == null) {
             return ""

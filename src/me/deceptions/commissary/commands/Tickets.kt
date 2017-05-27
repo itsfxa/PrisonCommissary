@@ -97,7 +97,6 @@ class Tickets(val main: Main) : CommandExecutor {
                     savePlayers()
                 }
             }
-            return true
         }
 
 

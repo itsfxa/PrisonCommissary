@@ -56,7 +56,7 @@ class AddPoints(private val main: Main) : CommandExecutor {
             if (isNumber(points)) {
                 sender.sendMessage(col(main.config.getString("AddPoints-Added").replace("{prefix}", prefix).replace("{player}", p.name).replace("{points}", points)))
                 val currentPoints = main.players.getInt(p.uniqueId.toString() + ".Points")
-                val finalPoints = currentPoints + Integer.valueOf(points)!!
+                val finalPoints = currentPoints + Integer.valueOf(points)
                 main.players.set(p.uniqueId.toString() + ".Points", finalPoints)
                 p.sendMessage(col(main.config.getString("AddPoints-Given").replace("{prefix}", prefix).replace("{points}", points)))
                 savePlayers()
