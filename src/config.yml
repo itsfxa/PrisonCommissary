@@ -1,6 +1,5 @@
 # Options #
 Buy-Tickets-Enabled: true # Should you be able to buy tickets?
-Tickets-Or-Points: 'Tickets' # Use Tickets or Points for accessing commissary? Either use: Tickets or Points
 
 Commissary-Prefix: '&7[&cCommissary&7]'
 Points-Prefix: '&7[&cPoints&7]'
