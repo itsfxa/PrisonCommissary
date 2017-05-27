@@ -1,9 +1,10 @@
 # Options #
 Buy-Tickets-Enabled: true # Should you be able to buy tickets?
+Tickets-Or-Points: 'Tickets' # Use Tickets or Points for accessing commissary? Either use: Tickets or Points
 
 Commissary-Prefix: '&7[&cCommissary&7]'
 Points-Prefix: '&7[&cPoints&7]'
-Ticket-Prefix: '&7[&cTicket&7]'
+Ticket-Prefix: '&7[&cTickets&7]'
 No-Permission: '&cYou do not have permission to use this command!'
 Must-Be-Player: '&cYou must be a player to run this command!'
 Not-A-Valid-Number: '&cThat is not a valid number!'

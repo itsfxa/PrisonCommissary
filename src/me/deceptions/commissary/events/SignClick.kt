@@ -10,6 +10,7 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerInteractEvent
+import org.bukkit.inventory.ItemStack
 import org.bukkit.scheduler.BukkitRunnable
 import java.io.IOException
 
@@ -38,37 +39,54 @@ class SignClick(private val main: Main) : Listener {
 
                     CName = name
 
-                    val pointsToEnter = main.commissaries.getInt(name + ".Points")
-                    val currentPoints = main.players.getInt(p.uniqueId.toString() + ".Points")
-                    if (pointsToEnter <= currentPoints) {
-                        main.players.set(p.uniqueId.toString() + ".inCommissary", true)
-                        saveLoc(p)
-                        timer(p)
-                        val finalPoints = currentPoints - pointsToEnter
-                        main.players.set(p.uniqueId.toString() + ".Points", finalPoints)
-                        if (pointsToEnter > 0) {
-                            p.sendMessage(col(main.config.getString("Deducted-Points").replace("{points}", pointsToEnter.toString()).replace("{prefix}", prefix)))
+                    if (main.config.getString("Tickets-Or-Points").equals("Tickets")) {
+                        if (p.itemInHand.equals(Material.valueOf(main.config.getString("Ticket-Item")))) {
+                            p.inventory.itemInHand = null
+                            main.players.set(p.uniqueId.toString() + ".inCommissary", true)
+                            saveLoc(p)
+                            timer(p)
+                            savePlayers()
+                            val x = main.commissaries.getDouble(name + ".X")
+                            val y = main.commissaries.getDouble(name + ".Y")
+                            val z = main.commissaries.getDouble(name + ".Z")
+                            val yaw = main.commissaries.getDouble(name + ".Yaw").toFloat()
+                            val pitch = main.commissaries.getDouble(name + ".Pitch").toFloat()
+                            p.teleport(Location(p.world, x, y, z, yaw, pitch))
                         }
-                        savePlayers()
+                    } else if (main.config.getString("Tickets-Or-Points").equals("Points")){
 
-                        val x = main.commissaries.getDouble(name + ".X")
-                        val y = main.commissaries.getDouble(name + ".Y")
-                        val z = main.commissaries.getDouble(name + ".Z")
-                        val yaw = main.commissaries.getDouble(name + ".Yaw").toFloat()
-                        val pitch = main.commissaries.getDouble(name + ".Pitch").toFloat()
+                        val pointsToEnter = main.commissaries.getInt(name + ".Points")
+                        val currentPoints = main.players.getInt(p.uniqueId.toString() + ".Points")
+                        if (pointsToEnter <= currentPoints) {
+                            main.players.set(p.uniqueId.toString() + ".inCommissary", true)
+                            saveLoc(p)
+                            timer(p)
+                            val finalPoints = currentPoints - pointsToEnter
+                            main.players.set(p.uniqueId.toString() + ".Points", finalPoints)
+                            if (pointsToEnter > 0) {
+                                p.sendMessage(col(main.config.getString("Deducted-Points").replace("{points}", pointsToEnter.toString()).replace("{prefix}", prefix)))
+                            }
+                            savePlayers()
 
-                        p.teleport(Location(p.world, x, y, z, yaw, pitch))
-                    } else {
-                        p.sendMessage(col(main.config.getString("Not-Enough-To-Enter").replace("{prefix}", prefix)))
+                            val x = main.commissaries.getDouble(name + ".X")
+                            val y = main.commissaries.getDouble(name + ".Y")
+                            val z = main.commissaries.getDouble(name + ".Z")
+                            val yaw = main.commissaries.getDouble(name + ".Yaw").toFloat()
+                            val pitch = main.commissaries.getDouble(name + ".Pitch").toFloat()
+
+                            p.teleport(Location(p.world, x, y, z, yaw, pitch))
+                        } else {
+                            p.sendMessage(col(main.config.getString("Not-Enough-To-Enter").replace("{prefix}", prefix)))
+                        }
                     }
                 }
             }
         }
     }
 
-    private fun timer(p: Player) {
+    fun timer(p: Player) {
         object : BukkitRunnable() {
-            internal var time = main.commissaries.getInt(CName!! + ".Time")
+            internal var time = main.commissaries.getInt(CName + ".Time")
 
             override fun run() {
                 time--
