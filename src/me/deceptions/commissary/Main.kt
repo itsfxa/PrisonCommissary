@@ -56,7 +56,7 @@ class Main : JavaPlugin() {
         getCommand("commissary").executor = Commissary(this)
         getCommand("points").executor = Points(this)
         getCommand("addpoints").executor = AddPoints(this)
-        getCommand("ticket").executor = Tickets(this)
+        getCommand("tickets").executor = Tickets(this)
     }
 
     private fun saveFiles() {

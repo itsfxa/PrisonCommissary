@@ -401,13 +401,12 @@ class Points(private val main: Main) : CommandExecutor {
         }
     }
 
-    private fun savePlayers() {
+    fun savePlayers() {
         try {
             main.players.save(main.playersyml)
         } catch (e: IOException) {
             e.printStackTrace()
         }
-
     }
 
     fun getPoints(p: Player): Int {

@@ -1,8 +1,8 @@
 TODO:
     Tickets Class:
-        Finish the buy command.
-        Make sure the give command works fine.
-        Add error messages where due.
+        Finish the buy command. (DONE)
+        Make sure the give command works fine. (DONE)
+        Add error messages where due. (DONE)
 
     SignClick Class:
         Add integration for tickets.
