@@ -17,6 +17,7 @@ import java.io.IOException
 class SignClick(private val main: Main) : Listener {
 
     lateinit var CName: String
+    val ticket: ItemStack = ItemStack(Material.valueOf(main.config.getString("Ticket-Item")))
 
     @EventHandler
     fun signClick(e: PlayerInteractEvent) {
@@ -39,45 +40,29 @@ class SignClick(private val main: Main) : Listener {
 
                     CName = name
 
-                    if (main.config.getString("Tickets-Or-Points").equals("Tickets")) {
-                        if (p.itemInHand.equals(Material.valueOf(main.config.getString("Ticket-Item")))) {
-                            p.inventory.itemInHand = null
-                            main.players.set(p.uniqueId.toString() + ".inCommissary", true)
-                            saveLoc(p)
-                            timer(p)
-                            savePlayers()
-                            val x = main.commissaries.getDouble(name + ".X")
-                            val y = main.commissaries.getDouble(name + ".Y")
-                            val z = main.commissaries.getDouble(name + ".Z")
-                            val yaw = main.commissaries.getDouble(name + ".Yaw").toFloat()
-                            val pitch = main.commissaries.getDouble(name + ".Pitch").toFloat()
-                            p.teleport(Location(p.world, x, y, z, yaw, pitch))
+
+                    val pointsToEnter = main.commissaries.getInt(name + ".Points")
+                    val currentPoints = main.players.getInt(p.uniqueId.toString() + ".Points")
+                    if (pointsToEnter <= currentPoints) {
+                        main.players.set(p.uniqueId.toString() + ".inCommissary", true)
+                        saveLoc(p)
+                        timer(p)
+                        val finalPoints = currentPoints - pointsToEnter
+                        main.players.set(p.uniqueId.toString() + ".Points", finalPoints)
+                        if (pointsToEnter > 0) {
+                            p.sendMessage(col(main.config.getString("Deducted-Points").replace("{points}", pointsToEnter.toString()).replace("{prefix}", prefix)))
                         }
-                    } else if (main.config.getString("Tickets-Or-Points").equals("Points")){
+                        savePlayers()
 
-                        val pointsToEnter = main.commissaries.getInt(name + ".Points")
-                        val currentPoints = main.players.getInt(p.uniqueId.toString() + ".Points")
-                        if (pointsToEnter <= currentPoints) {
-                            main.players.set(p.uniqueId.toString() + ".inCommissary", true)
-                            saveLoc(p)
-                            timer(p)
-                            val finalPoints = currentPoints - pointsToEnter
-                            main.players.set(p.uniqueId.toString() + ".Points", finalPoints)
-                            if (pointsToEnter > 0) {
-                                p.sendMessage(col(main.config.getString("Deducted-Points").replace("{points}", pointsToEnter.toString()).replace("{prefix}", prefix)))
-                            }
-                            savePlayers()
+                        val x = main.commissaries.getDouble(name + ".X")
+                        val y = main.commissaries.getDouble(name + ".Y")
+                        val z = main.commissaries.getDouble(name + ".Z")
+                        val yaw = main.commissaries.getDouble(name + ".Yaw").toFloat()
+                        val pitch = main.commissaries.getDouble(name + ".Pitch").toFloat()
 
-                            val x = main.commissaries.getDouble(name + ".X")
-                            val y = main.commissaries.getDouble(name + ".Y")
-                            val z = main.commissaries.getDouble(name + ".Z")
-                            val yaw = main.commissaries.getDouble(name + ".Yaw").toFloat()
-                            val pitch = main.commissaries.getDouble(name + ".Pitch").toFloat()
-
-                            p.teleport(Location(p.world, x, y, z, yaw, pitch))
-                        } else {
-                            p.sendMessage(col(main.config.getString("Not-Enough-To-Enter").replace("{prefix}", prefix)))
-                        }
+                        p.teleport(Location(p.world, x, y, z, yaw, pitch))
+                    } else {
+                        p.sendMessage(col(main.config.getString("Not-Enough-To-Enter").replace("{prefix}", prefix)))
                     }
                 }
             }
