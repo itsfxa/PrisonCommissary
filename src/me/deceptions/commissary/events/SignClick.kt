@@ -17,7 +17,6 @@ import java.io.IOException
 class SignClick(private val main: Main) : Listener {
 
     lateinit var CName: String
-    val ticket: ItemStack = ItemStack(Material.valueOf(main.config.getString("Ticket-Item")))
 
     @EventHandler
     fun signClick(e: PlayerInteractEvent) {
@@ -39,7 +38,6 @@ class SignClick(private val main: Main) : Listener {
                     }
 
                     CName = name
-
 
                     val pointsToEnter = main.commissaries.getInt(name + ".Points")
                     val currentPoints = main.players.getInt(p.uniqueId.toString() + ".Points")

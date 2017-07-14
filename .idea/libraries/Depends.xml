@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Depends">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Dependencies/PlaceholderAPI.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Dependencies/spigot-1.8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/kotlin-runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Dependencies/MVdWPlaceholderAPI.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../Dependencies/spigot-1.8.8.jar!/" />
+    </SOURCES>
+  </library>
+</component>

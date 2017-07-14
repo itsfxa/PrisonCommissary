@@ -1,9 +1,6 @@
 # Options #
-Buy-Tickets-Enabled: true # Should you be able to buy tickets?
-
 Commissary-Prefix: '&7[&cCommissary&7]'
 Points-Prefix: '&7[&cPoints&7]'
-Ticket-Prefix: '&7[&cTickets&7]'
 No-Permission: '&cYou do not have permission to use this command!'
 Must-Be-Player: '&cYou must be a player to run this command!'
 Not-A-Valid-Number: '&cThat is not a valid number!'
@@ -70,19 +67,3 @@ Deducted-Points: '{prefix} &7You have been deducted &c{points} &7points'
 Not-Enough-To-Enter: '{prefix} &cYou do not have enough points to enter Commissary!'
 Teleported-To-Original-Location: '{prefix} &7You have been teleported to your last position.'
 #######################
-
-# Ticket messages #
-Commissary-Name-Does-Not-Exist: '{prefix} &cThat commissary does not exist!'
-Give-Ticket-Inventory-Full: '{prefix} &cThat player''s inventory is full!'
-Ticket-Not-Enough-Points: '{prefix} &cYou do not have enough points for that ticket!'
-Ticket-Bought: '{prefix} &7You have been deducted &c{points} &7for a commissary ticket.'
-Ticket-Given: '{prefix} &7You gave a commissary ticket to &c{player}'
-Ticket-Received: '{prefix} &7You were given a commissary ticket by &c{player}'
-
-# Ticket options #
-Ticket-Item: 'PAPER' # If it's Dirt for instance, make it full caps. DIRT. If it was two words, like Sea Lantern, it would be SEA_LANTERN. - Names: http://minecraft-ids.grahamedgecombe.com/
-Ticket-Name: '&8{commissary} Ticket' # {commissary} = Commissary name.
-Ticket-Lore1-Enabled: true
-Ticket-Lore2-Enabled: true
-Ticket-Lore1: '&7Used for getting into'
-Ticket-Lore2: '&7commissaries'

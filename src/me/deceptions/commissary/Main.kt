@@ -1,13 +1,15 @@
 package me.deceptions.commissary
 
+import be.maximvdw.placeholderapi.PlaceholderReplaceEvent
+import be.maximvdw.placeholderapi.PlaceholderReplacer
 import me.deceptions.commissary.commands.AddPoints
 import me.deceptions.commissary.commands.Commissary
 import me.deceptions.commissary.commands.Points
-import me.deceptions.commissary.commands.Tickets
 import me.deceptions.commissary.events.Joins
 import me.deceptions.commissary.events.SignClick
 import me.deceptions.commissary.events.SignCreate
 import org.bukkit.Bukkit
+import org.bukkit.ChatColor
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.plugin.java.JavaPlugin
@@ -43,6 +45,15 @@ class Main : JavaPlugin() {
         } else {
             println("[PrisonCommissary] PlaceholderAPI not found. - Commissary point placeholder will not work!")
         }
+
+        // register MVdW placeholders.
+        if (Bukkit.getPluginManager().isPluginEnabled("MVdWPlaceholderAPI")) {
+            be.maximvdw.placeholderapi.PlaceholderAPI.registerPlaceholder(this, "prisoncommissary_points",
+                    { event ->
+                        val player = event.player
+                        players.getInt(player.uniqueId.toString() + ".Points").toString()
+                    })
+        }
     }
 
     private fun registerListeners() {
@@ -56,7 +67,6 @@ class Main : JavaPlugin() {
         getCommand("commissary").executor = Commissary(this)
         getCommand("points").executor = Points(this)
         getCommand("addpoints").executor = AddPoints(this)
-        getCommand("tickets").executor = Tickets(this)
     }
 
     private fun saveFiles() {

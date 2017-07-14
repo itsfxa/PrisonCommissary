@@ -4,7 +4,7 @@ version: 1.5
 author: FXA
 description: A cool and inventive commissary plugin for the best of prison servers!
 website: https://deceptions.me
-softdepend: [PlaceholderAPI]
+softdepend: [PlaceholderAPI,MVdWPlaceholderAPI]
 
 commands:
   commissary:
